@@ -1,0 +1,16 @@
+@import '~highlight.js/styles/github.css';
+@import url('https://fonts.googleapis.com/css?family=Spectral+SC:700');
+pre {
+    display: flex;
+    height: 100%;
+    word-wrap: normal;
+    margin: 0;
+    overflow-y: auto;
+  }
+  code {
+    flex: 1;
+    padding: 24px;
+    line-height: 1.8em;
+    display: block;
+    font-size: 0.9em;
+}

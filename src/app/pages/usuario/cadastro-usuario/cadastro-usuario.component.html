@@ -1,0 +1,79 @@
+<basic-breadcrumb [BreadcrumbModel]="breadcrumbModel"></basic-breadcrumb>
+
+<div class="card">
+  <h4 class="card-header">Gestão de usuários</h4>
+  <div class="card-body">
+    <form [formGroup]="usuarioForm" novalidate>
+   
+      <div class="form-row">
+        <div class="col-md-6">
+          <basic-input-with-errors label="Nome *">
+            <input id="nome" type="text" class="form-control" autocomplete="new-nome" formControlName="nome">
+          </basic-input-with-errors>
+        </div>
+        <div class="col-md-6">
+          <basic-input-with-errors label="Sobrenome *">
+            <input id="sobrenome" type="text" class="form-control" autocomplete="new-sobrenome" formControlName="sobrenome">
+          </basic-input-with-errors>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6">
+          <basic-input-with-errors label="Email *">
+            <input id="email" type="text" class="form-control" autocomplete="new-email" formControlName="email">
+          </basic-input-with-errors>
+        </div>
+        <div class="col-md-6">
+          <basic-input-with-errors label="Senha *">
+            <input id="senha" type="password" class="form-control" autocomplete="new-senha" formControlName="senha">
+          </basic-input-with-errors>
+        </div>
+      </div>
+      <div class="form-group">
+        <basic-input-with-errors label="Rua">
+          <input id="rua" type="text" class="form-control" formControlName="rua">
+        </basic-input-with-errors>
+      </div>
+      <div class="form-row">
+        <div class="col-md-4">
+          <basic-input-with-errors label="Estado">
+            <basic-autocomplete [settings]="autocompleteEstadoSettings" formControlName="estado"></basic-autocomplete>
+          </basic-input-with-errors>
+        </div>
+        <div class="col-md-6">
+          <basic-input-with-errors label="Cidade">
+            <basic-autocomplete [settings]="autocompleteCidadeSettings" formControlName="cidade" (selectedItemEmitter)="autoCompleteCidadeItemSelected = $event"></basic-autocomplete>
+          </basic-input-with-errors>
+          {{autoCompleteCidadeItemSelected | json}}
+        </div>
+        <div class="form-group col-md-2">
+          <basic-input-with-errors label="Complemento">
+            <input type="text" class="form-control" formControlName="complemento" id="complemento" autocomplete="new-complemento">
+          </basic-input-with-errors>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check" role="checkbox" aria-checked="true">
+            <input class="form-check-input" formControlName="administrador" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Administrador
+            </label>
+        </div>
+      </div>
+
+      <div class="form-row basic-app-box-btn">
+        <button class="btn basic-app-btn-padrao" [disabled]="!usuarioForm.valid" (click)="onSalvar()" tooltip='Voltar para a página anterior'
+        tooltip-position='left'>
+          <i class="fa fa-sign-in basic-app-btn-icon"></i>
+          <span>Cadastrar</span>
+        </button>
+        <a type="button" class="btn basic-app-btn-secundario" [routerLink]="['/usuario']" tooltip='Voltar para a página anterior'
+          tooltip-position='left'>
+          <i class="fa fa-arrow-left"></i>
+          <span>Voltar</span>
+        </a>
+      </div>
+
+    </form>
+  </div>
+</div>

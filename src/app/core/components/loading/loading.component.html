@@ -1,0 +1,8 @@
+<div class="black-overlay" *ngIf="showLoading" [ngStyle]="{'background-color': bdColor}" [style.position]="'fixed'">
+  <div [class]="loadingClass" [style.color]="color">
+    <div *ngFor="let i of divArray"></div>
+  </div>
+  <div class="loading-text">
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+/* pagination */
+
+.pagination-top-basic-app {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
+
+.pagination-bottom-basic-app{
+    margin-bottom: 30px;
+}
+
+
+
+
+/*  CSS UNINTER  */
+
+
+.basic-app-btn-pag-nav {
+    border-radius: 60px!important;
+    color: inherit!important;
+    text-decoration: none!important;
+    background-color: transparent!important;
+    background-image: none!important;
+    border-color: #c4c5d6!important;
+    width: 2.25rem!important;
+    height: 2.25rem!important;
+    padding: 5px!important;
+    margin: 3px!important;
+    text-align: center!important;
+    font-size: 1.1rem!important;
+}
+
+.basic-app-btn-pag-nav:hover  {
+    z-index: 2!important;
+    background-color: #fcb515!important;
+    border-radius: 60px!important;
+    color: #111!important;
+    border-color: #fcb515!important;
+}
+
+.basic-app-btn-pag-nav i {
+margin-top:4px!important;
+}
+
+.basic-app-dig-pag {
+    width: 40px!important;
+    float: left!important;
+    height: 2.25rem!important;
+    padding: 5px!important;
+    margin: 3px!important;
+    text-align: center!important;
+    font-size: .9rem!important;
+}
+
+.basic-app-dig-pag-left {
+    float: left!important;
+    display: inline-block!important;
+    margin-bottom: 0.5rem!important;
+    margin-top: 0.6rem!important;
+    margin-left: 1rem!important;
+    margin-right: .3rem!important;
+    font-size: .9rem!important;
+}
+
+.basic-app-dig-pag-right {
+    float: right!important;
+    display: inline-block!important;
+    margin-bottom: 0.5rem!important;
+    margin-top: 0.6rem!important;
+    margin-left: .3rem!important;
+    font-size: .9rem!important;
+}
+
+.basic-app-apresentando-pg {
+    font-size: .9rem!important;
+    margin-top: 15px!important;
+}
+

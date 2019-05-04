@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light basic-app-header-navbar">
+    <div class="container-fluid">
+
+        <div class="btn-group">
+            <form class="form-inline">
+                <input type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="Buscar">
+                <div class="input-group-append">
+                    <button class="btn btn-success" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <table class="table-user-info">
+                <tbody>
+                    <tr>
+                        <td class="align-middle">
+                            <div class="user-info text-right" (mouseenter)="abrirInfos = true"
+                                (mouseleave)="abrirInfos = false">
+                                <a class="basic-app-user-bar-nome">
+                                    {{ userInfo?.nome }}
+                                </a>
+                                <a class="basic-app-user-bar-matricula">
+                                    {{ userInfo?.matricula }}
+                                </a>
+                            </div>
+                        </td>
+                        <td class="align-middle" (mouseenter)="abrirInfos = true" (mouseleave)="abrirInfos = false">
+                            <div class="user-avatar">
+                                <img src="./assets/_images/users/avatar.png" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="dropdown-menu dropdown-menu-right basic-app-dropdown-menu-right" [class.show]="abrirInfos"
+                (mouseenter)="abrirInfos = true" (mouseleave)="abrirInfos = false">
+
+                <div class="dropdown-item">
+                    <span class="basic-app-seta-dropdown-right">
+                        <i class="fa fa-caret-up basic-app-seta-icon-dropdown-right">
+                        </i>
+                    </span>
+                    <div class="dropdown-item">
+                        <div class="card text-white bg-primary">
+                            <div class="card-header basic-app-dropdown-menu-perfil">
+                                <div class="col col-xs-12 basic-app-dropdown-menu-perfil-interno">
+                                    <div class="col col-xs-3 user-avatar">
+                                        <img src="./assets/_images/users/avatar.png" alt="" />
+                                    </div>
+                                    <div class="col col-xs-9 text-left basic-app-float-left">
+                                        <div class="d-block huge basic-app-dropdown-menu-perfil-nome">
+                                            {{ userInfo?.nome }}
+                                        </div>
+                                        <div class="d-block">
+                                            {{ userInfo?.matricula }}
+                                        </div>
+                                        <div class="d-block">
+                                            {{ userInfo?.email }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="dropdown-item btn-detalhes-perfil" target="_blank">
+                        <i class="fa fa-fw fa-life-ring ">
+                        </i>&nbsp; Perfil
+                    </a>
+                    <a class="dropdown-item btn-detalhes-perfil" (click)="onAtualizarMenus()">
+                        <i class="fa fa-fw fa-bars">
+                        </i>&nbsp; Atualizar menus
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

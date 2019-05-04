@@ -1,0 +1,20 @@
+<div class="wrapper">
+
+    <basic-menu class="wrapper basic-app-menu-base"></basic-menu>
+
+    <div id="content">
+
+        <basic-header></basic-header>
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+        
+        <basic-footer style="overflow: hidden; float: left; width: 100%; margin-bottom: 0px;"></basic-footer>
+    </div>
+</div>
+<ngx-spinner bdColor="rgba(156, 153, 153, 0.43)" color="#fdb313" type="">
+    <img src="./assets/gifs/loading.gif"/>
+</ngx-spinner>
+<basic-loading bdColor="rgba(156, 153, 153, 0.43)" color="#fdb313" type="">
+        <img src="./assets/gifs/loading.gif"/>
+</basic-loading>

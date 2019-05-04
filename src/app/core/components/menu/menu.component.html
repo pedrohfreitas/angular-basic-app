@@ -1,0 +1,77 @@
+<div class="wrapper">
+    <nav id="sidebar" [class.active]="toggleSideBar">
+        <div class="sidebar-header">
+            <div class="basic-app-dark">
+                <a routerLink="/index" [@toggleLogo]="logoState" class="navbar-brand" href="#">
+                    <img alt="" src="/assets/_images/logo/angular-basic.png" width="148" height="35" />
+                </a>
+                <button class="btn btn-lg btn-link navbar-toggler-desktop btn-hamburguer" type="button"
+                    (click)="onToggleSideBar()">
+                    <i class="fa fa-bars basic-app-detalhes-yellow" aria-hidden="true">
+                    </i>
+                </button>
+            </div>
+        </div>
+
+        <!-- <ul class="list-unstyled components menu">
+            <li>
+                <a [routerLink]="['/']"><i class="fa fa-home"></i>Início</a>
+            </li>
+            <li>
+                <a [routerLink]="['usuario']"><i class="fas fa-users"></i>Usuários</a>
+            </li>
+            <li>
+                <a routerLinkActive="router-link-active-nested" routerLinkActiveOptions="{ exact: true }"
+                    data-toggle="collapse" (click)="onToggleMenu(1)" [class.abrir-menu]="toggleMenu[1]"
+                    class="dropdown-toggle">
+                    <i class="fas fa-chart-line"></i>Graficos
+                </a>
+                <ul class="collapse list-unstyled sub-menu" [class.show]="toggleMenu[1]" [@toggleMenu]="menuState[1]"
+                    id="homeSubmenu">
+                    <li>
+                        <a routerLink="['/']">
+                            <i class="fa fa-circle icon-submenu" aria-hidden="true"></i>
+                            <span>Grafico 1</span></a>
+                    </li>
+                </ul>
+            </li>
+        </ul> -->
+
+        <ul class="list-unstyled components menu">
+
+            <li *ngFor="let menuPrimario of lstMenus; let i = index">
+
+                <a *ngIf="i == 0" [routerLink]="['/']">
+                    <i class="fa fa-home"></i>
+                    Início
+                </a>
+
+                <a *ngIf="(!menuPrimario.filhos || menuPrimario.filhos?.length == 0) && menuPrimario.visivel" routerLink="/{{ menuPrimario.url }}">
+                    <i class="fa {{ menuPrimario.nomeIcone }}"></i>
+                    {{ menuPrimario?.nome }}
+                </a>
+ 
+                <a *ngIf="menuPrimario.filhos?.length > 0" routerLinkActive="router-link-active-nested"
+                    routerLinkActiveOptions="{ exact: true }" data-toggle="collapse" (click)="onToggleMenu(i)"
+                    [class.abrir-menu]="toggleMenu[i]" class="dropdown-toggle">
+                    <i class="fa {{ menuPrimario?.nomeIcone }}"></i>
+                    {{ menuPrimario?.nome}}
+                </a>
+                <ul class="collapse list-unstyled sub-menu" [class.show]="toggleMenu[i]" [@toggleMenu]="menuState[i]"
+                    id="homeSubmenu">
+                    <li *ngFor="let menuSecundario of menuPrimario.filhos">
+                        <a routerLink="/{{ menuSecundario.url}}">
+                            <i class="fa fa-circle icon-submenu" aria-hidden="true"></i>
+                            <span>{{ menuSecundario.nome }}</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li *ngIf="lstMenus && lstMenus.length == 0">
+                <a [routerLink]="['/']">
+                    <i class="fa fa-home"></i>
+                    Início
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

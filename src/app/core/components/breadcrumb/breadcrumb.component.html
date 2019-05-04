@@ -1,0 +1,25 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li>
+      <button class="btn btn-secondary btn-voltar" (click)="onVoltar()">
+          <i class="fas fa-arrow-circle-left"></i>
+          Voltar
+      </button>
+    </li>
+    <li>
+      <h3 class="nome-sistema">
+        BASIC APP
+      </h3>
+    </li>
+    <li class="breadcrumb-item">
+      <a [routerLink]="['/']">
+        <i class="fa fa-home">
+        </i> Início
+      </a>
+    </li>
+    <li class="breadcrumb-item" [class.active]="item.routerActivated" aria-current="page" *ngFor="let item of BreadcrumbModel">
+      <a [routerLink]="item.routerlink" *ngIf="!item.routerActivated">{{item.routerName}}</a>
+      <span *ngIf="item.routerActivated">{{item.routerName}}</span>
+    </li>
+  </ol>
+</nav>

@@ -1,0 +1,43 @@
+
+/* BREADCRUMB */
+
+.breadcrumb {
+    background-color: transparent!important;
+}
+
+.breadcrumb h3 {
+    border-right: 1px solid #e2e5ec!important;
+    display: inline-block!important;
+    padding-right: 15px!important;
+    font-weight: 300!important;
+    font-size: 1.3rem!important;
+    font-weight: 500!important;
+    vertical-align: middle!important;
+    margin: 0 15px 0 0!important;
+    color: #3f4047!important;
+}
+
+.breadcrumb-item {
+    padding-top: 3px!important;
+}
+
+.breadcrumb-item a {
+    color: #6c757d!important;
+}
+
+.breadcrumb-item.active {
+    color: #898b96!important;
+    font-weight: bold!important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    font-weight: 400!important;
+}
+
+.btn-voltar {
+    padding: 1px 6px !important;
+}
+
+.nome-sistema{
+    padding-left: 3px;
+}

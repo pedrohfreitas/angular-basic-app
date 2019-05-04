@@ -1,0 +1,80 @@
+<basic-breadcrumb [BreadcrumbModel]="breadcrumbModel"></basic-breadcrumb>
+<div class="card">
+  <h4 class="card-header">Gráficos diversos</h4>
+  <div class="card-body">
+    <form class="needs-validation" novalidate>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="validationCustom01">Heat Map</label>
+          <ngx-charts-heat-map
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="dadosMulti"
+            [legend]="showLegend"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            (select)="onSelect($event)">
+          </ngx-charts-heat-map>
+        </div>
+        <div class="form-group col-md-2"></div>
+        <div class="form-group col-md-4">
+          <label for="validationCustom01">Tree Map</label>
+          <ngx-charts-tree-map
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="dadosSingle"
+            (select)="onSelect($event)">
+          </ngx-charts-tree-map>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="validationCustom01">Number Card</label>
+          <ngx-charts-number-card
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="dadosSingle"
+            (select)="onSelect($event)">
+          </ngx-charts-number-card>
+        </div>
+        <div class="form-group col-md-2"></div>
+        <div class="form-group col-md-4">
+          <label for="validationCustom01">Gauge</label>
+          <ngx-charts-gauge
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="dadosSingle"
+            [min]="0"
+            [max]="100"
+            [angleSpan]="240"
+            [startAngle]="-120"
+            [units]="'alerts'"
+            [bigSegments]="10"
+            [smallSegments]="5"
+            (select)="onSelect($event)">
+          </ngx-charts-gauge>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="validationCustom01">Linear Gauge</label>
+          <ngx-charts-linear-gauge
+            [view]="view"
+            [scheme]="colorScheme"
+            [value]="40"
+            [previousValue]="80"
+            [min]="0"
+            [max]="100"
+            [units]="'alerts'"
+            (select)="onSelect($event)">
+          </ngx-charts-linear-gauge>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

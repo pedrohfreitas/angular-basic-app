@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="basic-app-top-tab-titulo-add">
+    <div class="basic-app-top-tab-titulo-add-left col-sm-12 col-md-6">
+      <h5 class="text-center title-table-basic-app">
+        <span>{{settings?.title}}</span>
+      </h5>
+    </div>
+    <div class="basic-app-top-tab-titulo-add-right col-sm-12 col-md-6" *ngIf="settings.routerRegister?.length > 0">
+      <a class="basic-app-btn-add" tooltip='Adicionar' tooltip-position='left' [routerLink]="settings.routerRegister">
+        <span class="basic-app_btn-icon-add">+</span>
+      </a>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 basic-app-itens-pag">
+    <div>
+      <select class="custom-select form-control" [(ngModel)]="selectedItemsPerPage" (ngModelChange)="onSetItemsPerPage($event)">
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+      <label class="basic-app-itens-pag-left">items por página </label>
+    </div>
+  </div>
+  <basic-table-pagination [totalItems]="settings.totalItems" class="col-sm-12 col-md-6 basic-app-itens-pag"
+    [totalItemsPerPage]="selectedItemsPerPage" [startItemActualPage]="startItemActualPage" [finalItemActualPage]="finalItemActualPage"
+    [actualPage]="actualPage" [pages]="pages" [isTop]="true" (beforePage)="onBeforePage()" (nextPage)="onNextPage()"
+    (changePage)="onEspecificPage($event)" (firstPage)="onFirstPage()" (lastPage)="onLastPage()" [changePageEvent]="changePageEventSubject.asObservable()">
+  </basic-table-pagination>
+</div>
+<div class="row basic-app-table-dados">
+  <div class="col-sm-12 col-md-12">
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr class="p-1">
+          <th scope="col" *ngFor="let th of settings?.columns" class="text-center" [className]="getWidthClassColumn(th)"
+            [class.cursor-pointer]="th.ordination" (click)="ordernationColumn(th)">
+            {{th.title}} <i class="fa" *ngIf="th.ordination" [class.fa-caret-up]="th.actualOrdination == 1"
+              [class.fa-caret-down]="th.actualOrdination == 0"></i>
+          </th>
+        </tr>
+      </thead>
+      <tbody *ngIf="!carregando">
+        <tr *ngFor="let item of settings?.source | slice:startItemActualPage-1:finalItemActualPage">
+          <td *ngFor="let propertyColumn of propertiesColumn;let indexCol = index">
+            <ng-template [ngIf]="!propertyColumn.custom" [ngIfElse]="customCol">
+              {{ getValue(item, propertyColumn.propertyName) | dynamicPipeTable:getPipe(propertyColumn.propertyName):getPipeArgs(propertyColumn.propertyName)}}
+            </ng-template>
+            <ng-template #customCol>
+              <ng-template [ngIf]="propertyColumn.customId == 1">
+                <ng-container *ngTemplateOutlet="customTemplate1,context: { $implicit: item, index: indexRow }"></ng-container>
+              </ng-template>
+              <ng-template #customCol2 [ngIf]="propertyColumn.customId == 2">
+                <ng-container *ngTemplateOutlet="customTemplate2,context: { $implicit: item, index: indexRow }"></ng-container>
+              </ng-template>
+            </ng-template>
+          </td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="carregando">
+        <tr>
+          <td [attr.colspan]="propertiesColumn.length" class="text-center col-carregando">
+            Carregando...
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<basic-table-pagination [totalItems]="settings?.totalItems" [totalItemsPerPage]="selectedItemsPerPage"
+  [startItemActualPage]="startItemActualPage" [finalItemActualPage]="finalItemActualPage" [changePageEvent]="changePageEventSubject.asObservable()"
+  [actualPage]="actualPage" [pages]="pages" [isTop]="false" (beforePage)="onBeforePage()" (firstPage)="onFirstPage()"
+  (lastPage)="onLastPage()" (nextPage)="onNextPage()" (changePage)="onEspecificPage($event)"></basic-table-pagination>

@@ -1,0 +1,18 @@
+.cursor {
+    cursor: pointer;
+}
+
+.visible{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.accordion {
+    -webkit-box-shadow: 7px 6px 40px -13px rgba(142,161,191,1);
+    -moz-box-shadow: 7px 6px 40px -13px rgba(142,161,191,1);
+    box-shadow: 7px 6px 40px -13px rgba(142,161,191,1);
+}
+
+.accordion-basic-app{
+    margin-bottom: 12px;
+    
+}

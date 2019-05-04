@@ -1,0 +1,175 @@
+<basic-breadcrumb [BreadcrumbModel]="breadcrumbModel"></basic-breadcrumb>
+
+<div class="card">
+  <h4 class="card-header">Gráficos de barra</h4>
+  <div class="card-body">
+    <form class="needs-validation" novalidate>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="validationCustom01">Vertical</label>
+                <ngx-charts-bar-vertical
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="dadosSingle"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [animations]="animations"
+                    [schemeType]="schemeType"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel">
+                    </ngx-charts-bar-vertical>
+            </div>
+            <div class="form-group col-md-2"></div>
+            <div class="form-group col-md-4">
+                <label for="validationCustom01">Horizontal</label>
+                <ngx-charts-bar-horizontal
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="dadosSingle"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [animations]="animations"
+                    [schemeType]="schemeType"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel">
+                    </ngx-charts-bar-horizontal>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="validationCustom01">Agrupado Vertical</label>
+                <ngx-charts-bar-vertical-2d
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="dadosMulti"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [animations]="animations"
+                    [schemeType]="schemeType"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel">
+                    </ngx-charts-bar-vertical-2d>
+            </div>
+            <div class="form-group col-md-2"></div>
+            <div class="form-group col-md-4">
+                <label for="validationCustom01">Agrupado Horizontal</label>
+                <ngx-charts-bar-horizontal-2d
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="dadosMulti"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [animations]="animations"
+                    [schemeType]="schemeType"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel">
+                    </ngx-charts-bar-horizontal-2d>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="validationCustom01">Emplihado Vertical</label>
+                <ngx-charts-bar-vertical-stacked
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="dadosMulti"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [animations]="animations"
+                    [schemeType]="schemeType"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel">
+                    </ngx-charts-bar-vertical-stacked>
+            </div>
+            <div class="form-group col-md-2"></div>
+            <div class="form-group col-md-4">
+                <label for="validationCustom01">Emplihado Horizontal</label>
+                <ngx-charts-bar-horizontal-stacked
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="dadosMulti"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [animations]="animations"
+                    [schemeType]="schemeType"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel">
+                    </ngx-charts-bar-horizontal-stacked>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="validationCustom01">Normalizado Vertical</label>
+                <ngx-charts-bar-vertical-normalized
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="dadosMulti"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [animations]="animations"
+                    [schemeType]="schemeType"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel">
+                    </ngx-charts-bar-vertical-normalized>
+            </div>
+            <div class="form-group col-md-2"></div>
+            <div class="form-group col-md-4">
+                <label for="validationCustom01">Normalizado Horizontal</label>
+                <ngx-charts-bar-horizontal-normalized
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="dadosMulti"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [animations]="animations"
+                    [schemeType]="schemeType"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel">
+                    </ngx-charts-bar-horizontal-normalized>
+            </div>
+        </div>
+    </form>
+
+    <pre><code [highlight]="codeTs" (highlighted)="onHighlight($event)"></code></pre>
+    <!-- <div highlightChildren class="children">
+            <pre><code [textContent]="codeTs"></code></pre>
+        </div>
+    <div highlightChildren>
+        <pre><code [textContent]="codeTs"></code></pre>
+    </div>
+    <div highlightChildren="section p">
+        <section><p [textContent]="codeTs"></p></section>
+    </div> -->
+</div>

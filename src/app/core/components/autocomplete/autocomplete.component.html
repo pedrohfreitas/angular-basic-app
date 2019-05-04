@@ -1,0 +1,18 @@
+<!-- <label>{{settings?.title}}</label> -->
+<div class="input-group">
+  <input type="text" [id]="id" [(ngModel)]="valueInput" class="form-control typeahead" (ngModelChange)="onInputChanged($event)"
+    (focus)="visualizarAutocomplete()" (focusout)="control.markAsTouched()" (keydown)="keyDown($event)" placeholder="{{settings?.placeholder}}"
+    [class.loading]="loading" data-provide="typeahead" [autocomplete]="id" [class.is-valid]="settings.required && control.valid && control.touched"
+    [class.is-invalid]="hasError()">
+
+  <!-- <div class="invalid-feedback" *ngIf="settings.showInternalMessageErro && hasError()">
+    <i class="fa fa-remove"></i> {{settings?.messageRequired}}
+  </div> -->
+
+  <ul class="typeahead dropdown-menu autocomplete" [class.show]="VisualizarAutocomplete && autocompleteModelFiltrado && autocompleteModelFiltrado.length > 0"
+    #autocomplete role="menu" *ngIf="VisualizarAutocomplete && autocompleteModelFiltrado && autocompleteModelFiltrado.length > 0">
+    <li [tabindex]="i" (mouseenter)="mouseEnter(i)" (keydown)="keyDown($event)" role="menuitem" *ngFor="let item of autocompleteModelFiltrado; let i = index"
+      (mousedown)="selecionarItem(item)" class="cursor-pointer">
+      <span class="dropdown-item" [innerHTML]="item.valueHTML | innerHTML"></span>
+    </li>
+  </ul>

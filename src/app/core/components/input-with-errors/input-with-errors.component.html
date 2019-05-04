@@ -1,0 +1,16 @@
+<div class="form-group" [class.has-success]="hasSuccess()" [class.has-error]="hasError()">
+  <label [for]="label" *ngIf="label != ''">{{label}}</label>
+  
+  <!-- representa um espaço para a entrada de conteúdo. Var vir o conteúdo dentro das tags do meu component-->
+  <ng-content></ng-content>
+
+  <div role="alert" class="feedback-error" *ngIf="hasError()" [attr.aria-label]="messageError()">
+    <i aria-hidden="true" class="fa fa-exclamation-circle"></i>
+  </div>
+  <div role="alert" class="feedback-success" *ngIf="hasSuccess()" aria-label="campo valido">
+    <i aria-hidden="true" class="fa fa-check-circle"></i>
+  </div>
+  <div role="alert" class="feedback-message-error" *ngIf="hasError()">
+    <i class="fa fa-remove"></i> {{messageError()}}
+  </div> 
+</div>

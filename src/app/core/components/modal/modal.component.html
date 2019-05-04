@@ -1,0 +1,18 @@
+<div [@listAnimations]>
+  <div class="modal fade show" [@modalBackgroud] style="padding-right: 17px; display: block;">
+    <div class="modal-content modal-dialog" [@modal]>
+      <div class="modal-header">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h2>
+          <ng-content select="[modal-header]"></ng-content>
+        </h2>
+      </div>
+      <div class="modal-body">
+        <ng-content select="[modal-body]"></ng-content>
+      </div>
+      <div class="modal-footer">
+        <ng-content select="[modal-footer]"></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

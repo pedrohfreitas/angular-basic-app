@@ -1,0 +1,45 @@
+<basic-breadcrumb [BreadcrumbModel]="breadcrumbModel"></basic-breadcrumb>
+<div class="card">
+    <h4 class="card-header">Gráficos de pizza</h4>
+    <div class="card-body">
+        <form class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="validationCustom01">Pie chart</label>
+                    <ngx-charts-pie-chart
+                      [view]="view"
+                      [scheme]="colorScheme"
+                      [results]="dadosSingle"
+                      [legend]="showLegend"
+                      [explodeSlices]="explodeSlices"
+                      [labels]="showLabels"
+                      [doughnut]="doughnut"
+                      [gradient]="gradient">
+                    </ngx-charts-pie-chart>
+                </div>
+                <div class="form-group col-md-2"></div>
+                <div class="form-group col-md-4">
+                    <label for="validationCustom01">Pie advanced chart</label>
+                    <ngx-charts-advanced-pie-chart
+                      [view]="view"
+                      [scheme]="colorScheme"
+                      [results]="dadosSingle"
+                      [gradient]="gradient"
+                      (select)="onSelect($event)">
+                    </ngx-charts-advanced-pie-chart>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="validationCustom01">Pie grid chart</label>
+                    <ngx-charts-pie-grid
+                      [view]="view"
+                      [scheme]="colorScheme"
+                      [results]="dadosSingle"
+                      (select)="onSelect($event)">
+                    </ngx-charts-pie-grid>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

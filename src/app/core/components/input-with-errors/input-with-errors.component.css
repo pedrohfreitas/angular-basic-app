@@ -1,0 +1,46 @@
+.has-success ::ng-deep  input{
+    border-color: #28a745 !important;
+}
+
+.has-error ::ng-deep  input{
+    border-color: #dc3545 !important;
+}
+
+.feedback-error{
+    height: 38px!important;
+    width: 38px!important;
+    float: right!important;
+    margin-top: -39px!important;
+    border-radius: 0 0.25rem 0.25rem 0 !important;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-size:24px;
+    text-align: center;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    color:#dc3545!important;
+    padding:2px;
+}
+
+.feedback-success {
+    height: 38px!important;
+    width: 38px!important;
+    float: right!important;
+    margin-top: -39px!important;
+    border-radius: 0 0.25rem 0.25rem 0 !important;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-size:24px;
+    text-align: center;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    color:#28a745!important;
+    padding:2px;
+}
+
+.feedback-message-error {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #dc3545;
+}

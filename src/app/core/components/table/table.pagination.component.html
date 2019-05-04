@@ -1,0 +1,41 @@
+<div [class.row]="!isTop" [class.pagination-bottom-basic-app]="!isTop">
+    <div class="col-sm-12 col-md-5" *ngIf="!isTop">
+        <div aria-live="polite" class="basic-app-apresentando-pg">Apresentando {{startItemActualPage}} a {{finalItemActualPage}} de {{totalItems}} items</div>
+    </div>
+    <div [class.col-md-7]="!isTop">
+        <nav class="pull-right">
+            <ul class="pagination" [class.pagination-top-basic-app]="isTop">
+                <li class="page-item"  *ngIf="pages?.length > 1 && actualPage > 1">
+                    <a class="page-link basic-app-btn-pag-nav" tooltip='Voltar ao início' tooltip-position='top' aria-label="Inicio" (click)="onFirstPage()">
+                        <i class="fa fa-angle-double-left"></i>
+                        <span class="sr-only">Início</span>
+                    </a>
+                </li>
+                <li class="page-item" *ngIf="pages?.length > 1 && actualPage > 1">
+                    <a class="page-link basic-app-btn-pag-nav" tooltip='Anterior' tooltip-position='top' aria-label="Anterior" (click)="onBeforePage()">
+                        <i class="fa fa-angle-left"></i>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                </li>
+                <li class="page-item" *ngIf="pages?.length > 1 && actualPage < pages?.length">
+                    <a class="page-link basic-app-btn-pag-nav" tooltip='Próxima' tooltip-position='top' aria-label="Proxima" (click)="onNextPage()">
+                        <i class="fa fa-angle-right"></i>
+                        <span class="sr-only">Próxima</span>
+                    </a>
+                </li>
+                <li class="page-item"  *ngIf="pages?.length > 1 && actualPage < pages?.length" >
+                    <a class="page-link basic-app-btn-pag-nav" tooltip='Ir para o final' tooltip-position='top' aria-label="Final" (click)="onLastPage()" aria-label="Next">
+                        <i class="fa fa-angle-double-right"></i>
+                        <span class="sr-only">Última</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <span class="basic-app-dig-pag-left">página</span>
+                    <input type="text" class="form-control basic-app-dig-pag" aria-label="Recipient's username" [(ngModel)]="targetPage" (ngModelChange)="onPageTarget()"
+                        aria-describedby="basic-addon2">
+                     <span class="basic-app-dig-pag-right"> de {{pages?.length}}</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

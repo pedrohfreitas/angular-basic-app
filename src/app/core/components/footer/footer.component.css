@@ -1,0 +1,16 @@
+.footer {
+    flex: none;
+    min-height: 40px;
+    font-size: 0.9em;
+    background: #fff;
+    box-shadow: -2px -8px 41px -14px #29487a;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.footer-content{
+    position:relative;
+    padding: 10px;
+}

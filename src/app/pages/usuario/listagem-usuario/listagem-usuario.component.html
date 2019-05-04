@@ -1,0 +1,101 @@
+<basic-breadcrumb [BreadcrumbModel]="breadcrumbModel"></basic-breadcrumb>
+
+<div class="card">
+    <h4 class="card-header">Gestão de usuários</h4>
+    <div class="card-body">
+        <form class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="validationCustom01">Nome</label>
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Nome">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="validationCustom02">Sobrenome</label>
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Sobrenome">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="validationCustomUsername">E-mail</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        </div>
+                        <input type="text" class="form-control" id="validationCustomUsername" placeholder="E-mail"
+                            aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Please choose a username.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <basic-accordion>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="validationCustom03">Cidade</label>
+                        <input type="text" class="form-control" id="validationCustom03">
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+
+
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="validationCustom04">Estado</label>
+                        <input type="text" class="form-control" id="validationCustom04">
+                        <div class="invalid-feedback">
+                            Please provide a valid state.
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="validationCustom05">CEP</label>
+                        <input type="text" class="form-control" id="validationCustom05">
+                        <div class="invalid-feedback">
+                            Please provide a valid zip.
+                        </div>
+                    </div>
+                </div>
+            </basic-accordion>
+
+            <div class="form-row basic-app-box-btn">
+                <button class="btn basic-app-btn-padrao" (click)="onBuscar()" tooltip='Fazer busca com base no(s) filtro(s)'
+                    tooltip-position='left' type="submit">
+                    <i class="fa fa-search basic-app-btn-icon"></i>
+                    <span>Buscar</span>
+                </button>
+                <a type="button" class="btn basic-app-btn-secundario" (clear)="onLimpar()" tooltip='Limpas os campos de busca e reiniciar a tebela' tooltip-position='left'>
+                    <i class="fa fa-eraser"></i>
+                    <span>Limpar</span>
+                </a>
+            </div>
+
+        </form>
+
+        <hr />
+        <basic-table [settings]="tableSettings">
+            <ng-template #customTemplate1 let-item>
+                <span *ngIf="item.situacao == 'Ativo'" class="badge badge-pill badge-success">Ativo</span>
+                <span *ngIf="item.situacao == 'Inativo'" class="badge badge-pill badge-danger">Inativo</span>
+                <span *ngIf="item.situacao == 'Pausado'" class="badge badge-pill badge-primary">Pausado</span>
+            </ng-template>
+            <ng-template #customTemplate2 let-item>
+                <a class="basic-app-btn" tooltip='Botão Visualizar'  permissao menu="usuario" privilegio="view"  tooltip-position='left' (click)="onVisualizar(item)">
+                    <i class="fa fa-search"></i>
+                </a>
+                <a class="basic-app-btn" tooltip='Botão Editar'  permissao menu="editarusuario" privilegio="edit"  tooltip-position='top' [routerLink]="['..','editar',item.id]">
+                    <i class="fa fa-edit"></i>
+                </a>
+                <a class="basic-app-btn" tooltip='Botão Excluir'  permissao menu="usuario" privilegio="delete"  tooltip-position='buttom' (click)="onExcluirItem(item)">
+                    <i class="fa fa-trash-o"></i>
+                </a>
+            </ng-template>
+        </basic-table>
+    </div>
+</div>
+
+<router-outlet name="modal"></router-outlet>

@@ -1,0 +1,193 @@
+.navbar {
+    overflow: visible!important;
+}
+
+.navbar .nav-item > a:hover {
+    color: #000000!important;
+}
+
+.dropdown-menu-right.dropdown-menu.show {
+    left: auto!important;
+}
+
+
+.dropdown-item .card.text-white.bg-primary {
+    background-color: #29487a!important;
+    border-radius: 0rem!important;
+}
+
+.dropdown-menu-right.dropdown-menu.show .dropdown-item {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+    padding-top: 0px!important;
+}
+
+.table-user-info{
+    height: 68px;
+    max-height: 68px;
+}
+
+.user-info {
+    padding-right: 30px !important;
+}
+
+.user-info.dropdown-toggle:after {
+    display: none;
+} 
+
+.user-avatar {
+    padding-right: 18px !important;
+}
+
+.user-avatar .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+}
+
+.user-avatar img {
+    max-width: none!important;
+    height: 40px!important;
+    width: 40px!important;
+    border-radius: 50%;
+    border-style: none;
+}
+
+.user-avatar img:hover{
+    cursor: pointer;
+}
+
+.dropdown-menu.show .dropdown-item.btn-detalhes-perfil {
+    padding: 15px!important
+}
+
+.basic-app-user-bar {
+    float:left !important;
+    width:auto !important;
+}
+
+.basic-app-user-bar-nome {
+    padding: 0!important;
+}
+
+.basic-app-user-bar-matricula {
+    padding: 0!important;
+    float:left!important;
+    width:100%!important;
+}
+
+.basic-app-user-bar-foto {
+    margin-right: 15px!important;
+    margin-top: 10px!important;
+    text-align: center!important;
+}
+
+.basic-app-user-bar-foto-img {
+    max-width: none!important;
+}
+
+.basic-app-dropdown-menu-right {
+    left: auto!important;
+    padding-top: 0px!important;
+    margin-top: 0px!important;
+    right: 15px!important;
+}
+
+.basic-app-seta-dropdown-right {
+    font-size: 30px!important;
+    display: inline-block!important;
+    overflow: hidden!important;
+    height: 20px!important;
+    width: 100%!important;
+    position: absolute!important;
+    margin-top: -16px!important;
+    color: #ffffff!important;
+}
+
+.basic-app-seta-icon-dropdown-right {
+    margin-top: -10px!important;
+    font-size: 40px!important;
+    width: 35px!important;
+    float: right!important;
+    color:#29487a!important;
+}
+
+.basic-app-dropdown-menu-perfil {
+    padding-left:0px!important;
+    padding-right:0px!important;
+}
+
+.basic-app-dropdown-menu-perfil-interno {
+    display: flex!important;
+    padding-left:0px!important;
+    padding-right:0px!important;
+}
+
+.basic-app-dropdown-menu-perfil-avatar {
+    float:left!important;
+    padding-right: 0px!important;
+}
+
+.basic-app-dropdown-menu-perfil-nome {
+    font-size: 20px!important;
+    color: #fcb515 !important;
+}
+
+.basic-app-dropdown-menu-perfil-btn {
+    margin-right:10px!important;
+}
+
+.btn-detalhes-perfil:hover{
+    cursor: pointer;
+    background-color: #799dd8;
+    color:#ffffff!important;
+}
+
+.btn-link-sistemas{
+    color: #000;
+    text-decoration: none;
+}
+
+.btn-link-sistemas:hover{
+    color: #000;
+    text-decoration: none;
+}
+
+.btn-detalhes-sistemas{
+    cursor: pointer;
+}
+
+.btn-detalhes-sistemas:hover{
+    cursor: pointer;
+    background-color: #799dd8;
+}
+
+.menu a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.table-user-info a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 0px 0px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
