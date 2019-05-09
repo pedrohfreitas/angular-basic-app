@@ -26,6 +26,7 @@ import scss from 'highlight.js/lib/languages/scss';
 import typescript from 'highlight.js/lib/languages/typescript';
 import javascript from 'highlight.js/lib/languages/javascript';
 import { NotPermissionComponent } from './core/components/not-permission/not-permission.component';
+import { MainComponent } from './pages/main/main.component';
 
 /** 
  * Import every language you wish to highlight here
@@ -47,6 +48,7 @@ export function hljsLanguages() {
     FooterComponent,
     HomeComponent,
     NotFoundComponent,
+    MainComponent,
     MenuComponent,
     NotPermissionComponent
   ],

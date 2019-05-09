@@ -10,9 +10,10 @@ import { RouterModule } from "@angular/router";
 import { CepInterceptor } from '../core/security/interceptors/cep.interceptor';
 import { LoadingService } from '../core/components/loading/loading.service';
 import { MenuGuard } from '../core/security/guards/menu.guard';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-    declarations: [LoadingComponent],
+    declarations: [LoadingComponent, LoginComponent],
     imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
     exports: [CommonModule, FormsModule, ReactiveFormsModule, LoadingComponent]
 })

@@ -23,7 +23,8 @@ export class AuthGuard implements CanActivate {
   verify(state: RouterStateSnapshot): Observable<boolean> | boolean {
     //Verifica se o usuário tem registros de logado
     // if (!this._authService.isLoggedIn() || this._authService.getMenu() == null) {
-    //   return this._authService.login();
+      //   return this._authService.login();
+        this._router.navigate(['/login']);
     // }else{
       return true;
     // }
